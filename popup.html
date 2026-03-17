@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        width: 260px;
+        padding: 16px;
+        font-family: sans-serif;
+        background: #0f1117;
+        color: white;
+        margin: 0;
+      }
+
+      h3 {
+        margin: 0 0 16px;
+        font-size: 15px;
+        text-align: center;
+        color: white;
+      }
+
+      /* ---- label above each field ---- */
+      label {
+        display: block;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #666;
+        margin-bottom: 4px;
+        font-family: monospace;
+      }
+
+      /* ---- the display fields ---- */
+      .field {
+        background: #1a1a2e;
+        border: 1px solid #2a2a4a;
+        border-radius: 6px;
+        padding: 7px 10px;
+        font-size: 12px;
+        color: #ccc;
+        margin-bottom: 12px;
+        word-break: break-all;
+        min-height: 18px;
+      }
+
+      /* ---- the two big stat cards ---- */
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      .stat-card {
+        background: #1a1a2e;
+        border: 1px solid #2a2a4a;
+        border-radius: 8px;
+        padding: 12px 8px;
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 22px;
+        font-weight: bold;
+        color: #4285F4;
+        display: block;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .stat-label {
+        font-size: 10px;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid #2a2a4a;
+        margin: 12px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>📖 Reading Time</h3>
+
+    <!--
+      These labels show students exactly which getElementById call
+      connects to which element below
+    -->
+
+    <label>document.getElementById("title")</label>
+    <div class="field" id="title">Loading...</div>
+
+    <label>document.getElementById("url")</label>
+    <div class="field" id="url">Loading...</div>
+
+    <hr class="divider" />
+
+    <div class="stats">
+      <div class="stat-card">
+        <!--
+          The word count and reading time are also filled in
+          with getElementById — same pattern as title and url
+        -->
+        <span class="stat-number" id="word-count">—</span>
+        <span class="stat-label">words</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="read-time">—</span>
+        <span class="stat-label">min read</span>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
